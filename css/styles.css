@@ -1,0 +1,316 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'WorkSans', sans-serif;
+    background-color: #0D1117;
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.landing-container {
+    min-height: 100vh;
+    background-image: url('../Assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Content wrapper */
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Logo Principal */
+.logo-primary {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.logo-primary img {
+    width: 100%;
+    height: auto;
+}
+
+/* Intro Text */
+.intro-text {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* Question */
+.question {
+    font-family: 'LightSport', sans-serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.question .team-name {
+    background: linear-gradient(90deg, var(--green-gradient-start), var(--green-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Teams Container */
+.teams-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Team Card */
+.team-card {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, var(--purple-start), var(--purple-end));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(138, 58, 237, 0.4);
+}
+
+.team-card img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    filter: brightness(0) invert(0.15);
+    transition: filter 0.5s ease;
+}
+
+.team-card.revealed img {
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.team-card.correct {
+    box-shadow: 0 0 30px rgba(149, 251, 63, 0.6);
+    border: 3px solid var(--green-neon);
+}
+
+.team-card.incorrect {
+    box-shadow: 0 0 20px rgba(255, 70, 70, 0.5);
+    border: 3px solid #ff4646;
+}
+
+/* CTA Button */
+.cta-button {
+    background: linear-gradient(90deg, var(--green-gradient-start), var(--green-gradient-end));
+    color: #0D1117;
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 60px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(149, 251, 63, 0.4);
+}
+
+.cta-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Products Section */
+.products-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.product-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Logo Small - Fixed Position */
+.logo-small {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 150px;
+    z-index: 100;
+}
+
+.logo-small img {
+    width: 100%;
+    height: auto;
+}
+
+/* Result Message */
+.result-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    padding: 20px;
+}
+
+.result-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-message h2 {
+    font-family: 'LightSport', sans-serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.result-message.success h2 {
+    background: linear-gradient(90deg, var(--green-gradient-start), var(--green-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.result-message.error h2 {
+    color: #ff6b6b;
+}
+
+.retry-button {
+    background: linear-gradient(90deg, var(--green-gradient-start), var(--green-gradient-end));
+    color: #0D1117;
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.retry-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(149, 251, 63, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content > * {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.content > *:nth-child(1) { animation-delay: 0.1s; }
+.content > *:nth-child(2) { animation-delay: 0.2s; }
+.content > *:nth-child(3) { animation-delay: 0.3s; }
+.content > *:nth-child(4) { animation-delay: 0.4s; }
+.content > *:nth-child(5) { animation-delay: 0.5s; }
+.content > *:nth-child(6) { animation-delay: 0.6s; }
+.content > *:nth-child(7) { animation-delay: 0.7s; }
+
+/* Focus states for accessibility */
+.team-card:focus,
+.cta-button:focus,
+.retry-button:focus,
+.product-item:focus {
+    outline: 3px solid var(--green-neon);
+    outline-offset: 3px;
+}
+

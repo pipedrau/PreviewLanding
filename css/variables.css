@@ -1,0 +1,12 @@
+/* CSS Variables */
+:root {
+    --purple-start: #8A3AED;
+    --purple-end: #5A2995;
+    --green-neon: #BFFE5F;
+    --green-gradient-start: #95FB3F;
+    --green-gradient-end: #46FC6D;
+    --bg-component: #1E2930;
+    --white: #FFFFFF;
+    --dark-overlay: rgba(0, 0, 0, 0.6);
+}
+

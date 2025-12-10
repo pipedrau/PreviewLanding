@@ -1,0 +1,22 @@
+/* Font Faces */
+@font-face {
+    font-family: 'LightSport';
+    src: url('../Assets/Tipografías/LightSport-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    src: url('../Assets/Tipografías/WorkSans-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    src: url('../Assets/Tipografías/WorkSans-VariableItalic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
